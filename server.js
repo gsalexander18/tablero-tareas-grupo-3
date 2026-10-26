@@ -12,4 +12,4 @@ http.createServer((req, res) => {
     if (error) { res.writeHead(404); res.end('Not found'); return; }
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' }); res.end(data);
   });
-}).listen(3000, '0.0.0.0', () => console.log('Tablero disponible en http://localhost:3000'));
+}).listen(3000, () => console.log('Tablero disponible en http://localhost:3000'));

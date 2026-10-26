@@ -1,5 +1,7 @@
 # Tablero de tareas - Grupo 3
 
+![Cypress CI](https://github.com/gsalexander18/tablero-tareas-grupo-3/actions/workflows/cypress.yml/badge.svg)
+
 Aplicación web para organizar las tareas del proyecto final de Aseguramiento de la Calidad. Está hecha desde cero con HTML, CSS y JavaScript; guarda las tareas en `localStorage`.
 
 ## Integrantes y responsabilidades iniciales
