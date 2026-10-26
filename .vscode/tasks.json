@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Tablero: iniciar servidor", "type": "shell", "command": "npm start", "isBackground": true, "problemMatcher": [] },
+    { "label": "Cypress: ejecutar suite", "type": "shell", "command": "npm test", "group": "test", "problemMatcher": [] }
+  ]
+}

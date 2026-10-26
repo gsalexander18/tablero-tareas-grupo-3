@@ -1,0 +1,6 @@
+[
+  { "username": "grupo3", "password": "calidad123", "valid": true },
+  { "username": "incorrecto", "password": "calidad123", "valid": false },
+  { "username": "grupo3", "password": "incorrecta", "valid": false },
+  { "username": "", "password": "", "valid": false }
+]

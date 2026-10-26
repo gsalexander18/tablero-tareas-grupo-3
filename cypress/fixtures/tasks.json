@@ -1,0 +1,5 @@
+[
+  { "title": "Preparar estructura inicial", "expectedStatus": "Pendiente" },
+  { "title": "Diseñar pruebas de aceptación", "expectedStatus": "Pendiente" },
+  { "title": "Documentar reglas de negocio", "expectedStatus": "Pendiente" }
+]
