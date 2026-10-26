@@ -11,15 +11,16 @@ jobs:
       - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Instalar dependencias
         run: npm ci
       - name: Ejecutar pruebas Cypress
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: npm start
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://127.0.0.1:3000'
+          wait-on-timeout: 120
       - name: Guardar video y capturas de Cypress
         if: always()
         uses: actions/upload-artifact@v4

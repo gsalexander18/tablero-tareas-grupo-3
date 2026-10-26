@@ -141,7 +141,8 @@
     event.preventDefault();
     const input = $('#task-title');
     const title = input.value.trim();
-    if (!title) { $('#task-error').hidden = false; input.focus(); return; }
+    // DEMO CI ROJO: se quitó la validación del título vacío a propósito
+    // if (!title) { $('#task-error').hidden = false; input.focus(); return; }
     $('#task-error').hidden = true;
     tasks.unshift({
       id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
