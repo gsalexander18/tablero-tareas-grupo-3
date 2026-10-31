@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Tablero de tareas del Grupo 3 - Aseguramiento de la Calidad",
-  "scripts": {"start": "node server.js", "cy:open": "cypress open", "cy:run": "cypress run", "test": "start-server-and-test start http://localhost:3000 cy:run"},
+  "scripts": {"start": "node server.js", "cy:open": "cypress open", "cy:run": "cypress run", "test": "start-server-and-test start http://localhost:3000 cy:run", "cy:a11y": "cypress run --spec cypress/e2e/accesibilidad.cy.js", "test:a11y": "start-server-and-test start http://localhost:3000 cy:a11y"},
   "devDependencies": {"cypress": "^14.5.0", "cypress-axe": "^1.6.0", "start-server-and-test": "^2.0.10"}
 }

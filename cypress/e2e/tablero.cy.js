@@ -16,7 +16,8 @@ describe('Tablero de tareas del Grupo 3', () => {
   it('rechaza combinaciones de usuario y contraseña definidas en fixture', () => {
     cy.fixture('login-cases.json').then(cases => {
       cases.filter(item => !item.valid).forEach(item => {
-        cy.get('#username').clear().type(item.username);
+        if (item.username) cy.get('#username').clear().type(item.username);
+        else cy.get('#username').clear();
         if (item.password) cy.get('#password').clear().type(item.password);
         else cy.get('#password').clear();
         cy.get('#login-form').submit();
@@ -54,9 +55,9 @@ describe('Tablero de tareas del Grupo 3', () => {
 
   it('filtra las tareas por el estado elegido', () => {
     cy.login();
-    cy.get('#task-title').type('Tarea pendiente'); cy.get('#task-form').submit();
-    cy.get('.status-select').select('progress');
     cy.get('#task-title').type('Tarea en marcha'); cy.get('#task-form').submit();
+    cy.get('.status-select').select('progress');
+    cy.get('#task-title').type('Tarea pendiente'); cy.get('#task-form').submit();
     cy.get('[data-filter="progress"]').click();
     cy.get('#task-list .task-row').should('have.length', 1).and('contain.text', 'Tarea en marcha');
     cy.get('#count-progress').should('have.text', '1'); cy.get('#count-pending').should('have.text', '0');
