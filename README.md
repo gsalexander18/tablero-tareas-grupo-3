@@ -11,7 +11,7 @@ Aplicación web para organizar las tareas del proyecto final de Aseguramiento de
 | Anthony Alexander Garcia Santos | Interfaz y funcionalidad principal del tablero (página) |
 | Gerson Alfredo Herrera Soto | Suite Cypress: casos de aceptación, pruebas guiadas por datos, comandos personalizados y `cy.session` |
 | Brando Arnoldo Lemus Felipe | Repositorio GitHub, ramas, Pull Requests, GitHub Actions y evidencia CI |
-| Rodney Raul Porras Dodinez | Informe UMG, investigación y explicación de accesibilidad con `cypress-axe`, apoyo a revisión funcional |
+| Rodney Raúl Porras Godínez | Informe UMG, investigación y explicación de accesibilidad con `cypress-axe`, apoyo a revisión funcional |
 
 Estas asignaciones equilibran los entregables solicitados. Acuerden los detalles entre ustedes y registren el trabajo real de cada integrante en commits propios.
 
@@ -47,7 +47,13 @@ La configuración de Cypress usa `baseUrl` en `http://localhost:3000` y `video: 
 ## Dos temas de investigación aplicados
 
 1. **Comandos personalizados y caché de sesión:** `Cypress.Commands.add('login', ...)` centraliza el acceso, y `cy.session()` evita repetir el formulario en cada prueba. Gerson documentará cuándo conviene invalidar esta caché y cómo aislar el estado local.
-2. **Pruebas de accesibilidad:** `cypress-axe` ejecuta una revisión automatizada inicial con `cy.injectAxe()` y `cy.checkA11y()`. Rodney documentará el alcance de estas comprobaciones y los límites de una auditoría automatizada.
+2. **Pruebas de accesibilidad:** `cypress-axe` ejecuta una revisión automatizada inicial con `cy.injectAxe()` y `cy.checkA11y()`. Además de la prueba básica de `tablero.cy.js`, `cypress/e2e/accesibilidad.cy.js` revisa:
+   - el inicio de sesión y su mensaje de error;
+   - las etiquetas y botones de los formularios;
+   - el tablero con tareas en los tres estados, en escritorio y en móvil;
+   - el diálogo de edición y el error de título vacío.
+
+   Si axe encuentra violaciones, la terminal muestra cada regla con los elementos afectados. Se ejecuta sola con `npm run test:a11y`. El alcance y los límites de esta revisión automática están en [docs/accesibilidad-cypress-axe.md](docs/accesibilidad-cypress-axe.md).
 
 ## Entrega y exposición
 
